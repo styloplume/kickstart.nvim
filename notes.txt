@@ -1,0 +1,116 @@
+another note : new kickstart version apparently "breaks" the starting screen.
+restoring previous version makes it work again.
+=> gotta look at the differences and read the whole thing to try and understand what's up.
+
+other issue I've ran into again when restoring previous version :
+Mason's checkhealth error.
+The only info I've found is to delete nvim's cache (AppData/Local/Temp/nvim).
+Seems to fix it but seems somehow random ?
+
+Weird stuff. Switched from gcc to clang for treesitter and Mason's checkhealth started working again. Uh...
+
+also, I noticed :Lazy does not display its entire menu correctly unless I press a key.
+I'm having this issue with both versions of kickstart.
+
+very important note :
+require 'nvim-treesitter.install'.compilers = { "clang", "gcc" }
+mandatory at home to avoid Windows Defender flagging gcc compiled objects as infected.
+clang is the way apparently.
+
+weird, I thought I had edited this to add packages installed with choco at work.
+forgot to push ?
+
+Anyway, by now I must have bookmarked the nvim treesitter github page with its fix for
+windows defender finding viruses in parsers : simply force clang as the compiler instead of gcc.
+My init.lua here is doing it and everything's back to normal.
+Also, clang means installing LLVM (through choco :)
+
+if needed, use chocolatey to install things.
+
+note : I removed my manual copy of mingw and installed it with choco !
+note : it seems git comes with a version of GNU core utils (unzip and what not).
+Check c:\program files\git\usr\bin.
+
+so perhaps that might help completing nvim's checkhealth warnings.
+
+most the the prereqs are listed by checkhealth so the're's not a looot to say here but I must
+keep track of what I do on both computers.
+
+it should, in the end, lay out somewhat of a setup guide for neovim and python.
+
+pip install 'pynvim @ git+https://github.com/neovim/pynvim' for python 3.12 until version is officially released.
+january 11: pynvim current release does not work with python 3.12
+
+list of choco installed packages at home
+(i 'm pretty sure i've installed mingw since then too, at least at home)
+
+chocolatey 2.2.2
+chocolatey-compatibility.extension 1.0.0
+chocolatey-core.extension 1.4.0
+chocolatey-dotnetfx.extension 1.0.1
+chocolatey-visualstudio.extension 1.11.1
+chocolatey-windowsupdate.extension 1.0.5
+cmake 3.27.9
+cmake.install 3.27.9
+dotnetfx 4.8.0.20220524
+git 2.43.0
+git.install 2.43.0
+grep 3.7.0
+KB2919355 1.0.20160915
+KB2919442 1.0.20160915
+KB2999226 1.0.20181019
+KB3033929 1.0.5
+KB3035131 1.0.3
+KB3118401 1.0.5
+make 4.4.1
+neovim 0.9.5
+nodejs 21.4.0
+nodejs.install 21.4.0
+powershell-core 7.4.0
+python 3.12.1
+python3 3.12.1
+python312 3.12.1
+ripgrep 14.0.3
+vcredist140 14.38.33130
+vcredist2015 14.0.24215.20170201
+visualstudio2019buildtools 16.11.32
+visualstudio2019-workload-vctools 1.0.1
+visualstudio-installer 2.0.3
+which 1.11.0
+zig 0.11.0
+
+list of choco installs at work :
+
+$ choco list
+Chocolatey v2.2.2
+chocolatey 2.2.2
+chocolatey-compatibility.extension 1.0.0
+chocolatey-core.extension 1.4.0
+chocolatey-dotnetfx.extension 1.0.1
+chocolatey-visualstudio.extension 1.11.1
+chocolatey-windowsupdate.extension 1.0.5
+dotnetfx 4.8.0.20220524
+git 2.43.0
+git.install 2.43.0
+jq 1.7.1
+KB2919355 1.0.20160915
+KB2919442 1.0.20160915
+KB2999226 1.0.20181019
+KB3033929 1.0.5
+KB3035131 1.0.3
+KB3118401 1.0.5
+make 4.4.1
+neovim 0.9.5
+nodejs 21.3.0
+nodejs.install 21.3.0
+powershell-core 7.4.0
+python 3.12.0
+python3 3.12.0
+python312 3.12.0
+ripgrep 13.0.0.20220913
+vcredist140 14.38.33130
+vcredist2015 14.0.24215.20170201
+visualstudio2019buildtools 16.11.32
+visualstudio2019-workload-vctools 1.0.1
+visualstudio-installer 2.0.3
+30 packages installed.

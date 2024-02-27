@@ -810,5 +810,8 @@ require('lazy').setup({
   -- { import = 'custom.plugins' },
 }, {})
 
+-- Not sure yet about how to integrate this above so here I go
+require('nvim-treesitter.install').compilers = { 'clang', 'gcc' }
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
