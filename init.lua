@@ -773,6 +773,9 @@ require('lazy').setup {
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
+
+      -- If I'm reading the doc correctly, I should be able to do this
+      require('mini.starter').setup()
     end,
   },
 
