@@ -12,6 +12,7 @@ void foo() {
 int main()
 {
   std::cout << "Hello world!\n";
+  std::cout << "Testing\n";
 
   char a[10];
   a[10] = 0;
