@@ -1,3 +1,32 @@
+https://www.reddit.com/r/git/comments/ou4vht/resolving_merge_conflict_when_merging_changes/
+VERY IMPORTANT help to resolve merge conflicts when syncing fork with kickstart.
+
+There are multiple types of merge conflicts like, competing line merge conflict, which arises when you and a user(committer to the same source repository) changes the same line, the second type is the same thing with files or folders.
+
+1. NOW if you have competing line merge conflicts, then:
+Check if you have the 'upstream' remote set: type this in the terminal of that repository: git remote this should display the remotes set in your repository, probably origin and upstream.
+
+ALSO READ the Important section below
+
+2. Type: git pull upstream <branch name> (probably <branch name> is main).
+
+3. Then go to your local system file where you've cloned your forked repository, look for conflict markers: <<<<<<, =======, >>>>>>>. Remove these, and do the changes you want to resolve the conflict.
+
+2. NOW if you are facing Removed file merge conflict then:
+Repeat steps 1 and 2 of heading 1
+
+ALSO READ the Important section below
+
+2. Go to the cloned repository and delete or change the file OR folder, according to the requirement.
+
+NOTE: Remember that while performing these STEPS you are in your cloned repository, and not in a subfolder(of the repo) in the terminal.
+
+Important: If you see only origin as the remote in step 1 of the heading 1, then add the upstream remote in your git repository; Just type this in the terminal: git remote add upstream <link of the source repository>. This step needs to be done inside the forked repository in the terminal.
+
+Thanks for Reading happy Coding!
+
+
+
 another note : new kickstart version apparently "breaks" the starting screen.
 restoring previous version makes it work again.
 => gotta look at the differences and read the whole thing to try and understand what's up.
