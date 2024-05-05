@@ -1,3 +1,17 @@
+Very cool stuff found on @thingskatedid (twitter)
+; some command | idot
+idot : alias to graphviz dot, outputs SVG, converted to PNG by rsvg-convert, then rendered IN terminal.
+why an alias : to specify fonts/colours to match terminal settings.
+
+; seq 1 5 | ./line.awk | isvg
+line.awk generates SVG
+isvg : alias rsvg-convert | icat
+icat : alias <terminal image rendering + options>
+
+That's seriously insanely cool.
+
+Other great thing : prompt colour changes with command return code.
+
 https://www.reddit.com/r/git/comments/ou4vht/resolving_merge_conflict_when_merging_changes/
 VERY IMPORTANT help to resolve merge conflicts when syncing fork with kickstart.
 
