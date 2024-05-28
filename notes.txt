@@ -1,3 +1,7 @@
+FIX Makefile for Telescope-fzf : 
+ifeq (,$(findstring $(MSYSTEM),MSYS UCRT64 CLANG64 CLANGARM64 CLANG32 MINGW64 MINGW32))
+
+
 Very cool stuff found on @thingskatedid (twitter)
 ; some command | idot
 idot : alias to graphviz dot, outputs SVG, converted to PNG by rsvg-convert, then rendered IN terminal.
