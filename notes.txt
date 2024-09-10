@@ -1,3 +1,17 @@
+20240910 while updating to neovim 0.10.1
+- through chocolatey, for some reason, new nvim told me RUNTIME contained old stuff.
+  i might have removed it manually before uninstalling/reinstalling neovim but somehow,
+  choco would never generate runtime files anymore (despite them being in its zip file).
+- ended up downloading msi file from neovim website to manually install it.
+
+meh.
+
+Also installed choco install gh for gh cli auth.
+
+Not quite sure to follow the hererocks/luarocks stuff for lazy but I don't need it yet so whatever.
+
+******
+
 FIX Makefile for Telescope-fzf : 
 ifeq (,$(findstring $(MSYSTEM),MSYS UCRT64 CLANG64 CLANGARM64 CLANG32 MINGW64 MINGW32))
 
