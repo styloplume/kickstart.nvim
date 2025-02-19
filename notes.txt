@@ -1,3 +1,20 @@
+==============================================================================================================
+20250218 Python 3 provider errors @ home (pyenv stuff)
+
+provider.python: require("provider.python.health").check()
+
+Python 3 provider (optional) ~
+- pyenv: Path: C:\Users\berti\.pyenv\pyenv-win\bin\pyenv.BAT
+- WARNING pyenv: Failed to infer the root of pyenv by running `C:\Users\berti\.pyenv\pyenv-win\bin\pyenv.BAT root` : . Ignoring pyenv for all following checks.
+- `g:python3_host_prog` is not set. Searching for python3 in the environment.
+- WARNING `C:\Users\berti\scoop\shims\python3.EXE` appears to be a pyenv shim.
+  - ADVICE:
+    - `pyenv` is not in $PATH, your pyenv installation is broken. Set `g:python3_host_prog` to avoid surprises.
+- Executable: C:\Users\berti\scoop\shims\python3.EXE
+- ERROR Failed to run healthcheck for "provider.python" plugin. Exception:
+  ...pps/neovim/current/share/nvim/runtime/lua/vim/health.lua:336: Command error (job=7, exit code 1): "C:\Users\berti\scoop\shims\python3.EXE" -c "import sys; sys.path = [p for p in sys.path if p != """"]; import neovim; print(neovim.__file__)" (in C:\Users\berti\AppData\Local\nvim)
+
+==============================================================================================================
 20240910 while updating to neovim 0.10.1
 - through chocolatey, for some reason, new nvim told me RUNTIME contained old stuff.
   i might have removed it manually before uninstalling/reinstalling neovim but somehow,
@@ -10,12 +27,12 @@ Also installed choco install gh for gh cli auth.
 
 Not quite sure to follow the hererocks/luarocks stuff for lazy but I don't need it yet so whatever.
 
-******
+==============================================================================================================
 
 FIX Makefile for Telescope-fzf : 
 ifeq (,$(findstring $(MSYSTEM),MSYS UCRT64 CLANG64 CLANGARM64 CLANG32 MINGW64 MINGW32))
 
-
+==============================================================================================================
 Very cool stuff found on @thingskatedid (twitter)
 ; some command | idot
 idot : alias to graphviz dot, outputs SVG, converted to PNG by rsvg-convert, then rendered IN terminal.
@@ -30,6 +47,7 @@ That's seriously insanely cool.
 
 Other great thing : prompt colour changes with command return code.
 
+==============================================================================================================
 https://www.reddit.com/r/git/comments/ou4vht/resolving_merge_conflict_when_merging_changes/
 VERY IMPORTANT help to resolve merge conflicts when syncing fork with kickstart.
 
@@ -56,8 +74,7 @@ NOTE: Remember that while performing these STEPS you are in your cloned reposito
 Important: If you see only origin as the remote in step 1 of the heading 1, then add the upstream remote in your git repository; Just type this in the terminal: git remote add upstream <link of the source repository>. This step needs to be done inside the forked repository in the terminal.
 
 Thanks for Reading happy Coding!
-
-
+==============================================================================================================
 
 another note : new kickstart version apparently "breaks" the starting screen.
 restoring previous version makes it work again.
@@ -102,76 +119,54 @@ it should, in the end, lay out somewhat of a setup guide for neovim and python.
 pip install 'pynvim @ git+https://github.com/neovim/pynvim' for python 3.12 until version is officially released.
 january 11: pynvim current release does not work with python 3.12
 
-list of choco installed packages at home
-(i 'm pretty sure i've installed mingw since then too, at least at home)
+@home, not using choco anymore, stand alone or scoop :
 
-chocolatey 2.2.2
+C:\Windows\System32>choco list
+Chocolatey v2.3.0
+chocolatey 2.3.0
 chocolatey-compatibility.extension 1.0.0
 chocolatey-core.extension 1.4.0
-chocolatey-dotnetfx.extension 1.0.1
-chocolatey-visualstudio.extension 1.11.1
 chocolatey-windowsupdate.extension 1.0.5
-cmake 3.27.9
-cmake.install 3.27.9
-dotnetfx 4.8.0.20220524
-git 2.43.0
-git.install 2.43.0
-grep 3.7.0
 KB2919355 1.0.20160915
 KB2919442 1.0.20160915
 KB2999226 1.0.20181019
 KB3033929 1.0.5
 KB3035131 1.0.3
-KB3118401 1.0.5
-make 4.4.1
-neovim 0.9.5
-nodejs 21.4.0
-nodejs.install 21.4.0
-powershell-core 7.4.0
-python 3.12.1
-python3 3.12.1
-python312 3.12.1
-ripgrep 14.0.3
-vcredist140 14.38.33130
-vcredist2015 14.0.24215.20170201
-visualstudio2019buildtools 16.11.32
-visualstudio2019-workload-vctools 1.0.1
-visualstudio-installer 2.0.3
-which 1.11.0
-zig 0.11.0
+9 packages installed.
 
-list of choco installs at work :
+Did you know Pro / Business automatically syncs with Programs and
+ Features? Learn more about Package Synchronizer at
+ https://chocolatey.org/compare
 
-$ choco list
-Chocolatey v2.2.2
-chocolatey 2.2.2
-chocolatey-compatibility.extension 1.0.0
-chocolatey-core.extension 1.4.0
-chocolatey-dotnetfx.extension 1.0.1
-chocolatey-visualstudio.extension 1.11.1
-chocolatey-windowsupdate.extension 1.0.5
-dotnetfx 4.8.0.20220524
-git 2.43.0
-git.install 2.43.0
-jq 1.7.1
-KB2919355 1.0.20160915
-KB2919442 1.0.20160915
-KB2999226 1.0.20181019
-KB3033929 1.0.5
-KB3035131 1.0.3
-KB3118401 1.0.5
-make 4.4.1
-neovim 0.9.5
-nodejs 21.3.0
-nodejs.install 21.3.0
-powershell-core 7.4.0
-python 3.12.0
-python3 3.12.0
-python312 3.12.0
-ripgrep 13.0.0.20220913
-vcredist140 14.38.33130
-vcredist2015 14.0.24215.20170201
-visualstudio2019buildtools 16.11.32
-visualstudio2019-workload-vctools 1.0.1
-visualstudio-installer 2.0.3
-30 packages installed.
+C:\Windows\System32>scoop list
+Installed apps:
+
+Name                Version                  Source Updated             Info
+----                -------                  ------ -------             ----
+7zip                24.09                    main   2025-02-18 20:16:24
+busybox             5467-g9376eebd8          main   2025-02-18 20:16:26
+cacert              2024-12-31               main   2025-02-18 20:16:27
+clangd              19.1.2                   main   2025-02-18 20:16:30
+cmake               3.31.5                   main   2025-02-18 20:16:42
+dark                3.14                     main   2024-09-13 22:59:30
+fd                  10.2.0                   main   2024-09-13 22:53:23
+gh                  2.67.0                   main   2025-02-18 20:16:45
+git                 2.48.1                   main   2025-02-18 20:16:54
+gzip                1.3.12                   main   2024-09-13 23:25:37
+llvm                19.1.7                   main   2025-02-18 20:15:41
+lua-language-server 3.13.6                   main   2025-02-13 21:49:09
+make                4.4.1                    main   2024-09-13 22:59:23
+mingw               14.2.0-rt_v12-rev1       main   2025-02-18 20:17:14
+neovim              0.10.4                   main   2025-02-11 19:09:51
+ninja               1.12.1                   main   2024-09-13 23:04:29
+nodejs              23.8.0                   main   2025-02-18 20:17:19
+pwsh                7.5.0                    main   2025-02-18 20:17:23
+pyenv               3.1.1                    main   2025-02-18 20:26:32
+python              3.13.2                   main   2025-02-18 20:17:41
+ripgrep             14.1.1                   main   2024-09-13 22:53:39
+unzip               6.00                     main   2024-09-13 23:24:38
+vcredist            14.42.34438.0            extras 2025-02-18 20:18:08
+wezterm             20240203-110809-5046fc22 extras 2024-09-13 23:07:25
+wget                1.21.4                   main   2024-09-13 23:25:31
+zig                 0.13.0                   main   2024-09-13 22:54:55
+
