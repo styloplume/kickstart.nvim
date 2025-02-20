@@ -1034,5 +1034,16 @@ require('lazy').setup({
 -- Not sure yet about how to integrate this above so here I go
 require('nvim-treesitter.install').compilers = { 'clang', 'gcc' }
 
+-- stuff copied from advent
+--
+-- Oil.nvim is great. Oil command opens current buffer directory. YESSSS!
+vim.keymap.set('n', '-', '<cmd>Oil<CR>')
+-- Oil allows file system edition just like a buffer :
+-- - insert a line, type a filename, :w will confirm file creation
+-- - dd a line, p somewhere else will confirm file move
+--              :w will confirme file deletion
+-- It's crazy.
+-- But remember, don't navigate with that, use telescope !
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
