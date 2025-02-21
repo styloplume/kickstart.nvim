@@ -1,9 +1,9 @@
 // This is a testbed c++ source file to figure out a good set of rules for
 // clang-format, the super cool auto-formatter from LLVM.
 
-// includes are automatically sorted
-#include <array>
+// includes are automatically sorted (or not)
 #include <iostream>
+#include <array>
 
 // Definition blocks are separated
 class Example

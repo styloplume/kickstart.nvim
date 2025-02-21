@@ -8,3 +8,4 @@ ColumnLimit: 80
 AlignConsecutiveAssignments: Consecutive
 SeparateDefinitionBlocks: Always
 SpacesBeforeTrailingComments: 4
+SortIncludes: false
