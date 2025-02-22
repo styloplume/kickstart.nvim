@@ -8,3 +8,10 @@ lazy-lock.json
 
 tst/build/
 tst/.cache/
+
+tst/tst.aux
+tst/tst.fdb_latexmk
+tst/tst.fls
+tst/tst.log
+tst/tst.pdf
+tst/tst.synctex.gz
