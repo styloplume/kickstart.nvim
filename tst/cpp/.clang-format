@@ -14,4 +14,6 @@ InsertNewlineAtEOF: true
 AlignAfterOpenBracket: Align
 AllowShortFunctionsOnASingleLine: None
 AlignConsecutiveDeclarations: Consecutive
-#BinPackParameters: AlwaysOnePerLine
+# Breaks everything :/
+# BinPackParameters: AlwaysOnePerLine
+BreakTemplateDeclarations: No

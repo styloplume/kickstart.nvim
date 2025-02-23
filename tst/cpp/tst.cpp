@@ -1,18 +1,13 @@
-// SortIncludes: true|false
-// There are more options to preserve include blocks or not.
+// In case of warnings/errors with fixes available : <leader>ca for code actions
+
+// Includes can be preserved, sorted, by blocks, or merged.
+#include "tst.h"
 #include <array>
+#include <cstddef>
 #include <iostream>
 
-
-// Use of AllowShortFunctionsOnSingleLine is a problem to debug inline functions
-// so let's avoid id.
-inline void InlineMethod(bool b)
-{
-  std::cout << bool << std::endl;
-}
-
-// PackConstructorInitializers: Never
-Example::Example()
+// Constructor initializers can be auto-aligned
+Example::Example(int var)
 : _a(0),
   _p(NULL),
   _f(0.),
@@ -20,43 +15,49 @@ Example::Example()
 {
 }
 
-// AllowShortFunctionsOnASingleLine to allow one-liners
+AnotherExample::AnotherExample()
+: Example(0),
+  _b(false),
+  _i(0),
+  _q(NULL)
+{
+}
+
+// Functions on a single line can be allowed but also affect inlines so let's
+// avoid that.
 Example::~Example()
 {
 }
 
-// Longer things are not packed
+// Clangd should alert upon unused or uninitialized variables, but isn't. Why ?
 void Example::Method()
 {
   int unused_var = 0, uninitialized_var;
   std::cout << __FUNCTION__ << std::endl;
 }
 
-// One-liners
 void Example::Method(int input)
 {
   std::cout << input << std::endl;
 }
 
-// Testing args alignment : can't seem to get it working...
-void Example::Method(int iIntegerrrrrrrr, void *iPointerrrrrrrrr,
-                     double iDoubleeeeeeee)
+// BinPackParameters breaks everything so can't get these aligned :/
+void Example::Method(int iInteger, void *iPointer, double iDouble)
 {
 }
 
 // By the way, use ColumnLimit to define a max width.
 
-// Assignments are aligned
+// Assignments can be aligned
 int    z = 0;
 float  x = -2.;
 double c = 300;
 void  *v = NULL;
-// But not through empty lines or comments
+// Through empty lines/comments, or not.
 bool ultimate_test = false;
 char b[15];
 
-template <int i>
-void a()
+template <int i> void a()
 {
   a<i + 1>();
 }
@@ -94,6 +95,3 @@ int main()
 
   return 0;
 }
-
-// So here we are
-// playing with comments.
