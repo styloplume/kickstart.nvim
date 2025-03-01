@@ -1,3 +1,5 @@
+-- TODO : look up undo plugin to display undos as a tree
+
 ==============================================================================================================
 20250218 Python 3 provider errors @ home (pyenv stuff)
 
